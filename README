@@ -1,0 +1,114 @@
+# Retail Banking Budget Cycle Simulator
+### 3-Year Strategic Plan | Macro Scenario Analysis | Staffing Forecast
+
+> An interactive financial planning tool that simulates a retail bank division's full annual budget cycle — powered by real Federal Reserve macroeconomic data and deployed as a live web application.
+
+**Live App:** https://retail-banking-budget-simulator-prakash.streamlit.app/
+
+---
+
+## What This Project Does
+
+Most financial models live in static spreadsheets. This one is alive.
+
+This simulator pulls real macroeconomic data directly from the Federal Reserve (FRED), uses it to define three distinct economic scenarios, and projects a full 3-year income statement, staffing forecast, and sensitivity analysis for a mid-size retail banking division — all updating in real time as you move the sliders.
+
+It was built to demonstrate the exact planning skills used in a bank's annual budget cycle: building the base case, stress-testing assumptions, modeling headcount, and presenting results in a format senior management can actually use.
+
+---
+
+## Live Demo
+
+Click any scenario and watch the entire financial plan update instantly:
+
+- **Rising Rate** — Fed Funds climbing from 0% to 5.33% (calibrated to 2022–2023)
+- **Flat Rate** — Stable mid-cycle environment (calibrated to 2019)
+- **Falling Rate** — Emergency rate cuts and economic stress (calibrated to 2020)
+- **Custom** — Set your own Fed Funds rate, loan growth, and GDP assumptions with live sliders
+
+---
+
+## Key Features
+
+- **3-Year Income Statement Projections** — Net interest income, noninterest income, provisions, efficiency ratio, and net income across all three scenarios
+- **Staffing Forecast Module** — FTE demand tied to loan volume with productivity benchmarks (18–24 FTE per $1B loans) and automated understaffing and overstaffing alerts
+- **Sensitivity Analysis Tables** — One-way rate shock (±100bps) and volume shock (±5%) tables showing Year 3 net income impact with color-coded output
+- **Interactive Visualizations** — Grouped bar charts, revenue waterfalls, staffing trend lines, and sensitivity heatmaps built in Plotly
+- **Excel Export** — Download the full 3-year plan for any scenario as a formatted multi-sheet Excel workbook
+- **Management Commentary** — Plain-English narrative generated dynamically for each scenario explaining the key drivers
+
+---
+
+## Data Sources
+
+| Source | What It Provides |
+|---|---|
+| FRED — Federal Reserve Economic Data | Fed Funds Rate (FEDFUNDS), Real GDP (GDP), Unemployment Rate (UNRATE) — pulled live via API |
+| BLS NAICS 5221 — Depository Credit Intermediation | FTE productivity benchmarks for staffing model |
+| Simulated Division Financials | Industry-calibrated assumptions: NIM 2.8–3.4%, efficiency ratio 58–65%, charge-off rate 0.3–0.8% |
+
+> **Disclaimer:** This is a financial modeling exercise using publicly available macroeconomic data and industry-standard banking ratios. It does not use or represent proprietary PNC Financial Services data.
+
+---
+
+## Financial Planning Skills Demonstrated
+
+- Annual budget cycle modeling from Year 0 actuals through 3-year projections
+- Long-range strategic financial planning across multiple macro scenarios
+- Staffing forecasts and workforce productivity analysis tied to business volume
+- Macro scenario design calibrated to real Federal Reserve rate cycles
+- Sensitivity analysis and stress testing for senior management presentations
+- Operating leverage modeling and efficiency ratio management
+- Translating complex financial models into accessible, interactive tools
+
+---
+
+## How the Model Works
+
+**Step 1 — Real macro data in**
+The app pulls live FRED data and uses historical rate cycles (2019, 2020, 2022–2023) to anchor three forward-looking scenarios rather than making up numbers.
+
+**Step 2 — Scenario assumptions cascade through the P&L**
+Each scenario drives a different NIM trajectory, loan growth rate, charge-off path, and fee income growth rate — all grounded in how retail banks actually behave in each rate environment.
+
+**Step 3 — Staffing lags volume by one year**
+The workforce model mirrors real planning cycles — hiring and training take time, so FTE demand in Year 1 is based on Year 0 loan volume.
+
+**Step 4 — Sensitivity tables isolate each driver**
+Rate shocks and volume shocks are applied independently so management can see exactly how much of the outcome is driven by rate versus volume.
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| Python | Core modeling and data processing |
+| Pandas / NumPy | Financial calculations and data manipulation |
+| Plotly | Interactive charts and heatmaps |
+| Streamlit | Live web application and UI |
+| Openpyxl | Excel export with formatting |
+| FRED API | Live macroeconomic data |
+
+---
+
+## Run It Locally
+
+```bash
+git clone https://github.com/YOUR_USERNAME/retail-banking-budget-simulator.git
+cd retail-banking-budget-simulator
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+App will open at `http://localhost:8501`
+
+---
+
+## About This Project
+
+Built as a finance analyst portfolio project to demonstrate annual budget cycle and long-range planning skills relevant to retail banking finance roles. The model is calibrated against publicly available banking industry benchmarks and Federal Reserve economic data to ensure the simulated outputs reflect realistic planning scenarios.
+
+---
+
+*Built with Python, Streamlit, and FRED data | Not affiliated with or representative of any financial institution*
